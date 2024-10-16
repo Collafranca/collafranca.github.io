@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pràctica de Català</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="start-screen">
+            <h1>Pràctica de Català</h1>
+            <div id="settings" class="centered">
+                <h2>Configuració</h2>
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="check-accents" checked>
+                    <span class="checkmark"></span>
+                    Comprovació d'accents
+                </label>
+                <div class="slider-container">
+                    <label>Temps per pregunta (s):</label>
+                    <input type="range" id="time-per-question" min="5" max="30" value="10">
+                    <span id="time-value">10</span>
+                </div>
+                <div class="slider-container">
+                    <label>Nombre de preguntes:</label>
+                    <input type="range" id="number-of-questions" min="1" max="50" value="10">
+                    <span id="questions-value">10</span>
+                </div>
+            </div>
+            <button id="start-button">Començar</button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div id="notification" class="hidden"></div>
+            <div id="score">Correctes: 0 | Incorrectes: 0</div>
+            <div id="question-counter">0/10</div>
+            <div id="timer">Temps restant: <span id="time-remaining">10</span>s</div>
+            <div id="question"></div>
+            <input type="text" id="answer" placeholder="Escriu la resposta">
+            <button id="submit-answer">Enviar</button>
+            <button id="end-quiz">Acabar</button>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2>Resultats</h2>
+            <canvas id="result-chart"></canvas>
+            <div id="statistics"></div>
+            <button id="restart">Torna a començar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
